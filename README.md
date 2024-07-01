@@ -1,3 +1,38 @@
+# About the Project
+The Brain Wave website is a visually appealing and interactive platform using Firebase for authentication and dynamic content. It offers a unique and engaging user experience with dynamic features. Explore the site for creative and innovative elements.
+<br />
+
+👉 **Live Demo :** https://brain-wave-sand.vercel.app/
+
+# The site
+![screencapture-localhost-3000-2024-07-01-12_30_53](https://github.com/Aya-AbdElsalam/BrianWave/assets/152267387/16cf323b-2310-409f-8c06-96960b0e9aa3)
+
+# Tools
+- React js
+- CSS
+- Fire base
+- Redux Toolkit
+- React slick
+# Running the Project
+you can use 👉 **Live Demo :** https://brain-wave-sand.vercel.app/
+## or
+### Clone the Repository:
+```
+git clone https://github.com/Aya-AbdElsalam/BrianWave.git
+```
+### Navigate to the Project Directory:
+```
+cd BrianWave
+```
+### Install Dependencies:
+```
+npm install
+```
+### Run the Project:
+```
+npm start
+```
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
