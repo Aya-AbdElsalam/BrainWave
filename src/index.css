@@ -315,7 +315,8 @@ nav>div>div {
   border: 2px solid var(--main--color);
 
 }
-
+.slick-track{
+  transform:translate3d(0px,0px,0px) }
 .slider-content p:first-of-type {
   font-size: 28px;
   margin-bottom: 5px;
