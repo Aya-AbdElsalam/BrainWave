@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import { useSelector } from "react-redux";
+import Banner from "./component/Banner";
+import Header from "./component/Header";
+import SliderProducts from "./component/SliderProducts";
 
 function App() {
+  const langRedux = useSelector((state) => state.langSlice.lang);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" dir={langRedux === "Ar" ? "rtl" : "ltr"}>
+      <Header />
+      <Banner />
+      <SliderProducts />
     </div>
   );
 }
