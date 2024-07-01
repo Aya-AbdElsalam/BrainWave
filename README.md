@@ -22,7 +22,8 @@ git clone https://github.com/Aya-AbdElsalam/BrianWave.git
 ```
 ### Navigate to the Project Directory:
 ```
-cd BrianWave
+cd BrainWave
+
 ```
 ### Install Dependencies:
 ```
