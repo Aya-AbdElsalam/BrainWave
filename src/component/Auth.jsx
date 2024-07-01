@@ -3,13 +3,19 @@ import {
   getAuth,
   signInWithEmailAndPassword,
 } from "firebase/auth";
+import enLang from "../langeages/Auth/enLang.json";
+import arLang from "../langeages/Auth/arLang.json";
+
 import React, { useState } from "react";
+import { useLang } from "../hooks/useLang";
 export default function Auth(props) {
   const [auth, setAuth] = useState("sign");
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   const [errMsg, seterrMsg] = useState("");
   const [Sucess, setSucess] = useState(false);
+  const lang = useLang(enLang, arLang); // Using the custom hook to get the current language .
+
   function register(e) {
     setSucess(false);
     seterrMsg("");
@@ -25,13 +31,13 @@ export default function Auth(props) {
       .catch((error) => {
         switch (error.code) {
           case "auth/email-already-in-use":
-            seterrMsg("email already in use");
+            seterrMsg(lang.emailalreadyinuse);
             break;
           case "auth/weak-password":
-            seterrMsg("Password should be at least 6 characters");
+            seterrMsg(lang.Passwordshouldbeatleast6characters);
             break;
           default:
-            seterrMsg("Email or password was incorrect");
+            seterrMsg(lang.Emailorpasswordwasincorrect);
         }
       });
   }
@@ -47,8 +53,7 @@ export default function Auth(props) {
         localStorage.setItem("userToken", d.user.accessToken);
       })
       .catch((err) => {
-        console.group(err.message);
-        seterrMsg("Email or password was incorrect");
+        seterrMsg(lang.Emailorpasswordwasincorrect);
       });
   }
   return (
@@ -65,8 +70,8 @@ export default function Auth(props) {
               props.setAuth(false);
             }}
           />
-          <h2>SIGN IN</h2>
-          <p> Become a part of our community! </p>
+          <h2>{lang.SIGNIN}</h2>
+          <p>{lang.p} </p>
           <form
             onSubmit={(e) => {
               signIn(e);
@@ -74,7 +79,7 @@ export default function Auth(props) {
           >
             <input
               value={email}
-              placeholder="Email"
+              placeholder={lang.Email}
               type="email"
               required
               onInput={(e) => {
@@ -83,7 +88,7 @@ export default function Auth(props) {
             />
             <input
               value={pass}
-              placeholder="Password"
+              placeholder={lang.Password}
               type="password"
               required
               onInput={(e) => {
@@ -102,13 +107,13 @@ export default function Auth(props) {
                 setSucess(false);
               }}
             >
-              don't have account? register
+              {lang.dontRegister}
             </p>
             <button
               type="submit"
               className="mx-auto bg-primary rounded-[150px] hover:bg-transparent hover:text-primary border-4 border-primary p-2 font-bold w-36 text-white"
             >
-              SIGN IN
+              {lang.SIGNIN}
             </button>
           </form>{" "}
         </div>
@@ -124,12 +129,12 @@ export default function Auth(props) {
             src="https://img.icons8.com/ios-glyphs/240/delete-sign.png"
             alt="delete-sign"
           />
-          <h2>Register</h2>
-          <p> Become a part of our community! </p>
+          <h2>{lang.Register}</h2>
+          <p>{lang.p} </p>
           <form onSubmit={(e) => register(e)}>
             <input
               value={email}
-              placeholder="Email"
+              placeholder={lang.Email}
               type="email"
               required
               onInput={(e) => {
@@ -138,7 +143,7 @@ export default function Auth(props) {
             />
             <input
               value={pass}
-              placeholder="Password"
+              placeholder={lang.Password}
               type="password"
               required
               onInput={(e) => {
@@ -161,7 +166,7 @@ export default function Auth(props) {
                   src="https://img.icons8.com/windows/32/ok.png"
                   alt="ok"
                 />
-                Your account has been created successfully.
+                {lang.success}
               </p>
             )}
 
@@ -175,13 +180,13 @@ export default function Auth(props) {
                 setSucess(false);
               }}
             >
-              have account? sign in
+              {lang.haveAccount}
             </p>
             <button
               type="submit"
               className="mx-auto bg-primary rounded-[150px] hover:bg-transparent hover:text-primary border-4 border-primary p-2 font-bold w-36 text-white"
             >
-              Register
+              {lang.Register}
             </button>
           </form>{" "}
         </div>

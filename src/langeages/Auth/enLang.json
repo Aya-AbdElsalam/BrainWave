@@ -1,0 +1,14 @@
+{
+    "SIGNIN": "SIGN IN",
+    "p": " Become a part of our community!",
+    "dontRegister": "don't have account? register",
+    "Register": "Register",
+    "success": "Your account has been created successfully.",
+    "haveAccount": "have account? sign in",
+    "emailalreadyinuse": "email already in use",
+    "Passwordshouldbeatleast6characters": "Password should be at least 6 characters",
+    "Emailorpasswordwasincorrect": "Email or password was incorrect",
+    "Email": "Email",
+    "Password": "Password"
+
+}
