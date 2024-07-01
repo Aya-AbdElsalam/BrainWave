@@ -8,11 +8,12 @@ The Brain Wave website is a visually appealing and interactive platform using Fi
 ![screencapture-localhost-3000-2024-07-01-12_30_53](https://github.com/Aya-AbdElsalam/BrianWave/assets/152267387/16cf323b-2310-409f-8c06-96960b0e9aa3)
 
 # Tools
-- React js
-- CSS
-- Fire base
-- Redux Toolkit
-- React slick
+- React js for building user interfaces, focusing on component-based architecture
+- CSS for styling
+- Firebase for storing data and authentication
+- Redux Toolkit for state management
+- React Slick for slider
+  
 # Running the Project
 you can use 👉 **Live Demo :** https://brain-wave-sand.vercel.app/
 ## or
