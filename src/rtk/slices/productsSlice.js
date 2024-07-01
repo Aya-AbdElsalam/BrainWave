@@ -37,7 +37,7 @@ export const fetchProducts = createAsyncThunk(
 const productsSlice = createSlice({
   name: "products",
   initialState: {
-    product: [],
+    product: undefined,
     loading: false,
   },
   reducers: {

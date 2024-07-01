@@ -13,6 +13,7 @@ export default function SliderProducts() {
     infinite: false,
     arrows: false,
     speed: 500,
+    className: "slidess",
     slidesToShow: 3,
     slidesToScroll: 3,
     initialSlide: 0,
@@ -40,36 +41,44 @@ export default function SliderProducts() {
   const productsShop = useSelector((state) => {
     return state.productsSlice.product;
   });
-
+  const loading = useSelector((state) => {
+    return state.productsSlice.loading;
+  });
   useEffect(() => {
     dispatch(fetchProducts());
-  });
+    console.log(productsShop, loading);
+    document.querySelector(".slick-track ").style.transform =
+      "translate3d(0, 0px, 0px)";
+  }, [loading, productsShop === undefined]);
   return (
     <section className="slider container">
       <h2>{langRedux === "Ar" ? "المتجر" : "Our Shop"}</h2>
       <div className="slider-container">
         <Slider {...settings}>
-          {productsShop.map((p) => {
-            return (
-              <div className="slider-content" key={p.id}>
-                <img
-                  height={"253px"}
-                  width={"100%"}
-                  src={p.image_url}
-                  alt={p.product_name}
-                ></img>
-                <div className="card-content">
-                  <div>
-                    <p>
-                      {langRedux === "Ar" ? p.product_name_Ar : p.product_name}
-                    </p>
-                    <p>${p.price}</p>
+          {productsShop &&
+            productsShop.map((p) => {
+              return (
+                <div className="slider-content" key={p.id}>
+                  <img
+                    height={"253px"}
+                    width={"100%"}
+                    src={p.image_url}
+                    alt={p.product_name}
+                  ></img>
+                  <div className="card-content">
+                    <div>
+                      <p>
+                        {langRedux === "Ar"
+                          ? p.product_name_Ar
+                          : p.product_name}
+                      </p>
+                      <p>${p.price}</p>
+                    </div>
+                    <button>{langRedux === "Ar" ? "عرض" : "view"}</button>
                   </div>
-                  <button>{langRedux === "Ar" ? "عرض" : "view"}</button>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
         </Slider>
       </div>
     </section>

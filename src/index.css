@@ -322,6 +322,10 @@ nav>div>div {
   margin-bottom: 5px;
 }
 
+.slider-content p:last-of-type {
+  font-size: 20px;
+}
+
 .slider-content img {
   height: 253px;
   width: 100%;
@@ -353,6 +357,10 @@ nav>div>div {
 .slick-initialized .slick-slide {
   padding: 10px;
   box-sizing: border-box;
+}
+
+.slick-track {
+  transform: translate3d(0 0 0) !important;
 }
 
 /* Authentication */
