@@ -20,7 +20,6 @@ export default function SliderProducts() {
       {
         breakpoint: 900,
         settings: {
-          initialSlide: 1,
           slidesToShow: 2,
           slidesToScroll: 2,
         },
@@ -28,7 +27,6 @@ export default function SliderProducts() {
       {
         breakpoint: 630,
         settings: {
-          initialSlide: 1,
           slidesToShow: 1,
           slidesToScroll: 1,
         },
